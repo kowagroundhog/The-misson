@@ -10,17 +10,17 @@ enemy = 0
 speed = 10
 autoshoot = 0
 getammo = 0
-reload = Player("sound/reload.mp3")
+reload = Player("reload.mp3")
 # 0 = no
 # 1 = shoot
 class Player(Sprite):
     
     def on_create(self):
-        self.image = random.choice(["img/player.png", "img/ruru.png"])
+        self.image = random.choice(["player.png", "ruru.png"])
         self.skill = 1
-        if self.image == "img/player.png" :
+        if self.image == "player.png" :
             self.skill = 1
-        elif self.image == "img/ruru.png":
+        elif self.image == "ruru.png":
             self.skill = 2
         self.position = window.center
         self.speed = 10
@@ -98,7 +98,7 @@ class Player(Sprite):
 class Missile(Sprite):
 
     def on_create(self):
-        self.image = "img/missile.png"
+        self.image = "missile.png"
         self.position = gun.position
         self.speed = 5
         self.point_toward_mouse_cursor()
@@ -245,7 +245,7 @@ class Enemy_strong(Sprite):
 class Ammo(Sprite):
     global getammo, speed
     def on_create(self):
-        self.image = "img/ammo.png"
+        self.image = "ammo.png"
         self.scale = 0.2
         self.goto_random_position()
         self.add_tag("ammo")
